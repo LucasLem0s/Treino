@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <style>
+        body{
+            background-color: black;
+            color: aliceblue;
+            text-align: center;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tabuada do Luckeo</h1>
+
+    <div>
+        <p>Inicio <input type="number" name="Inicio" id="txt1"></p>
+        <p>Fim <input type="number" name="Fim" id="txt2"></p>
+        <p>Passos <input type="number" name="Passos" id="txt3"></p>
+        <input type="button" value="Contar" onclick="contar()">
+    </div>
+    <div id="res">Resposta</div>
+
+    <script>
+        function contar() {
+            let ini = document.getElementById('txt1')
+            let fim = document.getElementById('txt2')
+            let passo = document.getElementById('txt3')
+            let res = document.getElementById('res')
+
+            if(ini.value.length == 0 || fim.value.length == 0 || passo.value.length == 0) {
+                alert('Please insert number')
+            }else {
+                let i = Number(ini.value)
+                let f = Number(fim.value)
+                let p = Number(passo.value)
+               
+                res.innerHTML = ''
+
+                for(let c = i;c <= f ; c+= p ){
+                    res.innerHTML += `${c}`
+                }
+            }
+        }
+    </script>
+
+
+</body>
+</html>

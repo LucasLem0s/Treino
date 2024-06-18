@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <style>
+        body {
+            background-color: brown;
+            color: aliceblue;
+            font: 25px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contador do Lucas </h1>
+    <div>
+        <p>Inicio <input type="number" name="Inicio" id="txti"></p>
+        <p>Fim <input type="number" name="Fim" id="txtf"></p>
+        <p>Passos <input type="number" name="Passos" id="txtp"></p>
+        <input type="button" value="contar" onclick="contar()">
+    </div>
+    <div id="res">Os passos vão aparecer aqui : </div>
+
+    <script>
+        function contar(){
+            let ini = window.document.getElementById('txti')
+            let fim = window.document.getElementById('txtf')
+            let passo = window.document.getElementById('txtp')
+            let res = window.document.getElementById('res')
+
+            if(ini.value.length == 0 || fim.value.length == 0 || passo.value.length == 0){
+                alert('Please insert number')
+            }else{
+                let i = Number(ini.value)
+                let f = Number(fim.value)
+                let p = Number(passo.value)
+
+                for( let c = i   ; c <= f  ; c += p  ){
+                    res.innerHTML += `${c}`
+                }
+            }
+
+
+        }
+    </script>
+</body>
+</html>
